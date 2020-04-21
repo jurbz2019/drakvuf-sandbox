@@ -48,8 +48,7 @@ steps:
   image: docker
   volumes:
     - name: dockersock
-      path:
-        path: /var/run/docker.sock
+      path: /var/run/docker.sock
   commands:
     # Install minio-client
     - wget -O /usr/local/bin/mc $CACHE_SERVER/mc
