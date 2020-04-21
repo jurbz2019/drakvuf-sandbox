@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/sh
 
 # Directory with .deb files
 OUTDIR=$(pwd)/out

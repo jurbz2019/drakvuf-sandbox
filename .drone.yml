@@ -55,7 +55,7 @@ steps:
     - mc mb --ignore-existing cache/debs
     # Download minio-server
     - wget -O drakcore/drakcore/systemd/minio $CACHE_SERVER/minio
-    - file ./drakcore/package/build.sh
+    - ./drakcore/package/build.sh
     - mc cp out/drakcore_*_amd64.deb "cache/debs/drakcore_drone-$DRONE_BUILD_NUMBER.deb"
   environment:
     MINIO_ACCESS_KEY:
