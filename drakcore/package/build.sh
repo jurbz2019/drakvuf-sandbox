@@ -7,7 +7,11 @@ BASEIMAGE=debian:buster
 # Current user - to make current user owner of output .deb files.
 FILE_OWNER=$(id -u):$(id -g)
 
-IMAGE_TAG=deb-build-web:$DRONE_BUILD_NUMBER
+if [ -n "$DRONE_BUILD_NUMBER" ]; then
+    IMAGE_TAG=deb-build-web:$DRONE_BUILD_NUMBER
+else
+    IMAGE_TAG=deb-build-web
+fi
 
 echo "Building $BASEIMAGE based image into $OUTDIR"
 docker build -f drakcore/package/Dockerfile \
