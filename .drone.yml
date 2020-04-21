@@ -42,7 +42,9 @@ steps:
 - name: package drakcore
   image: docker
   volumes:
-    - /var/run/docker.sock:/var/run/docker.sock
+    - name: dockersock
+      host:
+        path: /var/run/docker.sock
   commands:
     - export DEBIAN_FRONTEND=noninteractive
     # Install minio-client
