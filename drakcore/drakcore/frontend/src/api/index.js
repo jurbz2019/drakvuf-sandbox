@@ -22,6 +22,9 @@ export default {
   async getProcessTree(analysis) {
     return axios.get(`/processed/${analysis}/process_tree`);
   },
+  async getApiCalls(analysis) {
+    return axios.get(`/processed/${analysis}/apicall`);
+  },
   async query(q) {
     return axios.get("/query", { params: { q: q } });
   },
